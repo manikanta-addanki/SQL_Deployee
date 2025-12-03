@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app1.views import details,new_student
+from app1.views import update_student,delete_student
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',details,name='home101'),
-    path('newstudent',new_student,name='new_student_form')
+    path('newstudent',new_student,name='new_student_form'),
+    path('update/<int:id>/',update_student,name='update_student101'),
+    path('delete/<int:id>/',delete_student,name='delete_student201')
 ]
